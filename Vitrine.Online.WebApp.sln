@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.7.34221.43
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Vitrine.Online.WebApp", "Vitrine.Online.WebApp\Vitrine.Online.WebApp.csproj", "{2F01AC0F-F43D-4FA8-8A92-264CBE9D8C18}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Vitrine.Online.Core", "Vitrine.Online.Core\Vitrine.Online.Core.csproj", "{F8FE2002-21BE-4D69-BBDB-D57D8D27CADE}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2F01AC0F-F43D-4FA8-8A92-264CBE9D8C18}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2F01AC0F-F43D-4FA8-8A92-264CBE9D8C18}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2F01AC0F-F43D-4FA8-8A92-264CBE9D8C18}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2F01AC0F-F43D-4FA8-8A92-264CBE9D8C18}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F8FE2002-21BE-4D69-BBDB-D57D8D27CADE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F8FE2002-21BE-4D69-BBDB-D57D8D27CADE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F8FE2002-21BE-4D69-BBDB-D57D8D27CADE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F8FE2002-21BE-4D69-BBDB-D57D8D27CADE}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {AF4F4F65-C78B-46B8-8208-404B64804D17}
+	EndGlobalSection
+EndGlobal
