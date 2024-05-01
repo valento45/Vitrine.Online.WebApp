@@ -1,6 +1,12 @@
 ﻿using Npgsql;
 using System.Data;
 using System.Diagnostics;
+using Vitrine.Online.Core.Repositorys;
+using Vitrine.Online.Core.Repositorys.Interfaces;
+using Vitrine.Online.Core.Services;
+using Vitrine.Online.Core.Services.Intefaces;
+using Vitrine.Online.WebApp.Application;
+using Vitrine.Online.WebApp.Application.Interfaces;
 
 namespace Vitrine.Online.WebApp.Configuration
 {
@@ -26,12 +32,17 @@ namespace Vitrine.Online.WebApp.Configuration
 
         public static void AddRepositorys(IServiceCollection services)
         {
-
+            services.AddTransient<ICategoriaRepository, CategoriaRepository>();
         }
 
         public static void AddServices (IServiceCollection services)
         {
+            services.AddTransient<ICategoriaService, CategoriaService>();
+        }
 
+        public static void AddApplications(IServiceCollection services)
+        {
+            services.AddTransient<ICategoriaApplication, CategoriaApplication>();
         }
     }
 }
