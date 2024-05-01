@@ -5,16 +5,17 @@ CREATE DATABASE bd_vitrine
     CONNECTION LIMIT = -1
     IS_TEMPLATE = False;
 
-
+--drop table categoria_tb
 create table categoria_tb(
 	
 	IdCategoria serial not null primary key,
 	NomeCategoria varchar(150),
-	Descricao varchar(300)
+	Descricao varchar(300),
+	ImagemBase64 varchar
 );
 
 
-
+ 
 
 
 --drop table catalogos_tb
@@ -27,8 +28,8 @@ create table catalogos_tb(
 	REFERENCES categoria_tb(IdCategoria)
 );
 
-
-create  table produto_tb(
+--drop table produto_tb
+create table produto_tb(
 	IdProduto serial not null primary key,
 	IdCatalogo integer,
 	NomeProduto varchar(150),
@@ -43,14 +44,5 @@ create  table produto_tb(
 );
 
 
-
-create table anexo_solicitacao_tb(
-		id_anexo serial not null primary key,
-		IdSolicitacao integer not null,
-		anexo_base64 varchar not null,
-		extensao_arquivo varchar(10),
-		constraint IdSolicitacao foreign key(IdSolicitacao)
-		references solicitaco_orcamento_tb(IdSolicitacao)
-);
 
 
