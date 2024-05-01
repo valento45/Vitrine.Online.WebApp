@@ -186,10 +186,6 @@ namespace Expert.Gov.Core.Repositorys
 
 
         public string GetMessage() => Message;
-
-        internal Task<string?> ExecuteScalar(NpgsqlCommand cmd)
-        {
-            throw new NotImplementedException();
-        }
+      
     }
 }

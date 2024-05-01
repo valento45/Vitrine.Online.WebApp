@@ -1,4 +1,4 @@
-﻿using Vitrine.Online.Core.Entities.Categoria;
+﻿using Vitrine.Online.Core.Entities.Categorias;
 using Vitrine.Online.WebApp.Models.Categoria;
 
 namespace Vitrine.Online.WebApp.Application.Interfaces

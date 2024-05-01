@@ -7,7 +7,7 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Vitrine.Online.Core.Entities.Categoria;
+using Vitrine.Online.Core.Entities.Categorias;
 using Vitrine.Online.Core.Repositorys.Interfaces;
 
 namespace Vitrine.Online.Core.Repositorys
@@ -23,7 +23,7 @@ namespace Vitrine.Online.Core.Repositorys
 
         public async Task<bool> Inserir(Categoria categoria)
         {
-            string query = "INSERT INTO categoria.tb (NomeCategoria, Descricao, ImagemBase64)" +
+            string query = "INSERT INTO categoria_tb (NomeCategoria, Descricao, ImagemBase64)" +
                 " VALUES (@NomeCategoria, @Descricao, @ImagemBase64) returning IdCategoria;";
 
             NpgsqlCommand cmd = new NpgsqlCommand(query);
@@ -31,7 +31,7 @@ namespace Vitrine.Online.Core.Repositorys
             cmd.Parameters.AddWithValue(@"Descricao", categoria.Descricao);
             cmd.Parameters.AddWithValue(@"ImagemBase64", categoria.ImagemBase64);
 
-            var result = await base.ExecuteScalar(cmd);
+            var result = await base.ExecuteScalarAsync(cmd);
 
             if (result != null)
             {

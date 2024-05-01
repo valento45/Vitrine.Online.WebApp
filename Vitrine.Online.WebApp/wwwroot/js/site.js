@@ -2,3 +2,24 @@
 // for details on configuring this project to bundle and minify static web assets.
 
 // Write your JavaScript code.
+
+
+function onClickCarregarImagens(e) {
+
+
+    $('#btnCarregarImagens').click();
+}
+
+
+function onChangeImagens(e) {
+
+    var qtdAnexos = e.files.length;
+
+
+    $("#lblQtdAnexos").text(`( ${qtdAnexos} )`);
+}
+
+
+function onGotToBack() {
+    history.back();
+}

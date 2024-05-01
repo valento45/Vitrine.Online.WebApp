@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/Vitrine.Online.WebApp.styles.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/portfolios.css" asp-append-version="true" />
 
     @await RenderSectionAsync("Styles", required: false)
 </head>
@@ -24,13 +25,16 @@
                 <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between ">
                     <ul class="navbar-nav flex-grow-1">
                         <li class="nav-item">
-                            <a class=" nav-link " asp-area="" asp-controller="Catalogs" asp-action="VerCatalogo">View catalogs</a>
+                            <a class=" nav-link " asp-area="" asp-controller="Categoria" asp-action="Index">Categories</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class=" nav-link " asp-area="" asp-controller="Catalogs" asp-action="VerCatalogo">Catalogs</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link " asp-area="" asp-controller="SolicitacaoOrcamento" asp-action="SolicitacaoOrcamento">Request Quote</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link " asp-area="" asp-controller="Services" asp-action="VerServicos">View services</a>
+                            <a class="nav-link " asp-area="" asp-controller="Services" asp-action="VerServicos">Services</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link " asp-area="" asp-controller="Home" asp-action="Privacy">Contact</a>

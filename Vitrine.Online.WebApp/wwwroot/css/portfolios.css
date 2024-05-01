@@ -1,0 +1,24 @@
+﻿.card-portfolio {
+    width: 350px;
+    height: 380px;
+    padding: 2rem;
+}
+
+    .card-portfolio:hover {
+        background-color: #00808055 !important;
+        cursor: pointer;
+        transition: 0.5s;
+        transform: scale(1.05);
+    }
+
+    .card-portfolio p {
+        color: #BEB5B6;
+        font-family: Poppins-Light;
+    }
+
+    .card-portfolio small {
+        word-wrap: break-word;
+        width: 300px;
+        color: #BEB5B6;
+        font-family: Poppins-Light;
+    }

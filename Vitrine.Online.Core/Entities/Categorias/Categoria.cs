@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Vitrine.Online.Core.Entities.Categoria
+namespace Vitrine.Online.Core.Entities.Categorias
 {
     public class Categoria
     {

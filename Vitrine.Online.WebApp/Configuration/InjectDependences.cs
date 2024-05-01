@@ -14,7 +14,7 @@ namespace Vitrine.Online.WebApp.Configuration
     {
 
 
-        public static void AddConnection(IServiceCollection services, ConfigurationManager configuration)
+        public static void AddConnection(this IServiceCollection services, ConfigurationManager configuration)
         {
             NpgsqlConnection npgsqlConnection;
             var stringConnection = string.Empty;
@@ -30,18 +30,18 @@ namespace Vitrine.Online.WebApp.Configuration
             services.AddSingleton<IDbConnection>(npgsqlConnection);
         }
 
-        public static void AddRepositorys(IServiceCollection services)
+        public static void AddRepositorys(this IServiceCollection services)
         {
             services.AddTransient<ICategoriaRepository, CategoriaRepository>();
 
         }
 
-        public static void AddServices (IServiceCollection services)
+        public static void AddServices (this IServiceCollection services)
         {
             services.AddTransient<ICategoriaService, CategoriaService>();
         }
 
-        public static void AddApplications(IServiceCollection services)
+        public static void AddApplications(this IServiceCollection services)
         {
             services.AddTransient<ICategoriaApplication, CategoriaApplication>();
         }
