@@ -1,3 +1,11 @@
+CREATE DATABASE bd_vitrine
+    WITH
+    OWNER = postgres
+    ENCODING = 'UTF8'
+    CONNECTION LIMIT = -1
+    IS_TEMPLATE = False;
+
+
 create IF NOT EXISTS table categoria_tb(
 	
 	IdCategoria serial not null primary key,
