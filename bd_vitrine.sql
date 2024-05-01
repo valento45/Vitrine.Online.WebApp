@@ -6,7 +6,7 @@ CREATE DATABASE bd_vitrine
     IS_TEMPLATE = False;
 
 
-create IF NOT EXISTS table categoria_tb(
+create table categoria_tb(
 	
 	IdCategoria serial not null primary key,
 	NomeCategoria varchar(150),
@@ -15,7 +15,7 @@ create IF NOT EXISTS table categoria_tb(
 
 
 
-create IF NOT EXISTS table catalogos_tb(
+create  table catalogos_tb(
 	
 	IdCatalogo serial not null primary key,
 	IdCategoria integer not null,
@@ -25,7 +25,7 @@ create IF NOT EXISTS table catalogos_tb(
 );
 
 
-create IF NOT EXISTS table produto_tb(
+create  table produto_tb(
 	IdProduto serial not null primary key,
 	IdCatalogo integer,
 	NomeProduto varchar(150),
@@ -39,6 +39,15 @@ create IF NOT EXISTS table produto_tb(
 
 );
 
-
+CREATE  table solicitaco_orcamento_tb(
+	
+	IdSolicitacao serial not null primary key,
+    NomeSolicitacao varchar (100),
+	CelularSolicitacao varchar (20),
+	EmailSolicitacao varchar (100) not null,
+	EnderecoSolicitacao varchar (100),
+	DescricaoSolicitacao varchar (100),
+	DataSolicitacao TIMESTAMP
+);
 
 

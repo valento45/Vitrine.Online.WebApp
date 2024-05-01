@@ -6,17 +6,17 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Vitrine.Online.Core.Models.ServicosSolicitacao
+namespace Vitrine.Online.Core.Models.SolicitacaoOrcamento
 {
     public class SolicitacaoOrcamento
     {
-        public long Id_Solicitacao { get; set; }
-        public string Nome { get; set; }
-        public string Celular { get; set; }
-        public string Email { get; set; }
-        public string Endereco_solicitacao { get; set; }
+        public long IdSolicitacao { get; set; }
+        public string NomeSolicitacao { get; set; }
+        public string CelularSolicitacao { get; set; }
+        public string EmailSolicitacao { get; set; }
+        public string EnderecoSolicitacao { get; set; }
 
-        public string Descricao_Solicitacao { get; set; }
+        public string DescricaoSolicitacao { get; set; }
 
         public ICollection<AnexoSolicitacaoOrcamento> Imagens { get; set; }
 
@@ -31,7 +31,7 @@ namespace Vitrine.Online.Core.Models.ServicosSolicitacao
         {
             var sb = new StringBuilder();
 
-            sb.Append(Endereco_solicitacao);
+            sb.Append(EnderecoSolicitacao);
 
         
 

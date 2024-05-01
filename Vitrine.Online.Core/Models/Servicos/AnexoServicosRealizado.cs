@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Vitrine.Online.Core.Models.TrabalhosRealizados
+namespace Vitrine.Online.Core.Models.services
 {
     public class AnexoServicosRealizado
     {

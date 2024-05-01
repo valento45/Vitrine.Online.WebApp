@@ -1,4 +1,5 @@
 ﻿using Dapper;
+using Expert.Gov.Core.Repositorys;
 using Npgsql;
 using System;
 using System.Collections.Generic;

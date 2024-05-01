@@ -1,11 +1,11 @@
-﻿using Vitrine.Online.Core.Models.ServicosSolicitacao;
+﻿using Vitrine.Online.Core.Models.SolicitacaoOrcamento;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Vitrine.Online.Core.Models.ServicosSolicitacao
+namespace Vitrine.Online.Core.Models.SolicitacaoOrcamento
 {
     public class SolicitacaoOrcamentoLista
     {
