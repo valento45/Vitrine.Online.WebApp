@@ -10,7 +10,7 @@ namespace Vitrine.Online.Core.Repositorys
 {
     public class RepositoryBase
     {
-        private readonly IDbConnection _dbConnection;
+        protected readonly IDbConnection _dbConnection;
 
         public RepositoryBase(IDbConnection dbConnection)
         {
