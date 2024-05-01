@@ -1,0 +1,25 @@
+﻿@using Vitrine.Online.WebApp.Models.Categorias;
+@model ListaCategoriasViewModel
+
+@{
+    ViewData["Title"] = "Categorias";
+}
+
+
+<div class="container container-ghost">
+
+    <h4>Categories</h4>
+    <hr />
+
+
+    @if(Model.Categorias?.Any() ?? false)
+    {
+
+    }
+    else
+    {
+        <div class="message-warning">
+            <h4 class="text-semi-bold-orange mt-3">Não foi encontrado nenhum registro !</h4>
+        </div>
+    }
+</div>

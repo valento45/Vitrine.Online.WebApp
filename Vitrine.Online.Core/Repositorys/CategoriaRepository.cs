@@ -7,7 +7,7 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Vitrine.Online.Core.Entities.Categoria;
+using Vitrine.Online.Core.Entities.Categorias;
 using Vitrine.Online.Core.Repositorys.Interfaces;
 
 namespace Vitrine.Online.Core.Repositorys

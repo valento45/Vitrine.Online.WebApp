@@ -52,7 +52,7 @@ hr {
 }
 
 
-.dark-theme a, h1, h2, h3, h5 {
+.dark-theme a, h1, h2, h3, h4, h5 {
     color: #BEB5B6;
     font-family: Poppins-Light;
 }
@@ -214,4 +214,18 @@ hr {
 .form-contato-sugestao {
     border-radius: 50px;
     padding: 30px;
+}
+
+.text-semi-bold-orange {
+    font-weight: bold;
+    font-family: Poppins-SemiBold;
+    color: #800000;
+}
+.message-warning {
+    height: 100px;
+    width: 100%;
+    background-color: beige;
+    text-align-last: center;
+    padding: 10px;
+    text-align: center;
 }

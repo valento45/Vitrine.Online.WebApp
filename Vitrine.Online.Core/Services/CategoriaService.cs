@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Vitrine.Online.Core.Entities.Categoria;
+using Vitrine.Online.Core.Entities.Categorias;
 using Vitrine.Online.Core.Repositorys.Interfaces;
 using Vitrine.Online.Core.Services.Intefaces;
 
