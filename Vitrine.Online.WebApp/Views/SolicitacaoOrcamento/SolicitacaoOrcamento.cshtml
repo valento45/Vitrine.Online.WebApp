@@ -7,28 +7,28 @@
 
     <form class="form-contato-sugestao mt-3 col-lg-6" asp-controller="Contato" asp-action="SalvarSolicitacao" method="post" enctype="multipart/form-data">
 
-        <input asp-for="Id_Solicitacao" class="d-none" />
+        <input asp-for="IdSolicitacao" class="d-none" />
 
         <div class="form-outline mb-4 ag-field-content">
-            <input asp-for="Nome" type="text" id="txtEmail" class="form-control ag-field-input ag-input-color-cinze-full" autocomplete="off" required />
+            <input asp-for="NomeSolicitacao" type="text" id="txtEmail" class="form-control ag-field-input ag-input-color-cinze-full" autocomplete="off" required />
             <label class="form-label text-semi-bold-light ag-field-label" for="form2Example2">Nome</label>
         </div>
 
         <div class="col-lg-12">
             <div class="form-outline mb-4 ag-field-content col-lg-6">
-                <input asp-for="Celular" type="text" id="txtEmail" class="form-control ag-field-input ag-input-color-cinze-full" autocomplete="off" required />
+                <input asp-for="CelularSolicitacao" type="text" id="txtEmail" class="form-control ag-field-input ag-input-color-cinze-full" autocomplete="off" required />
                 <label class="form-label text-semi-bold-light ag-field-label" for="form2Example2">Celular</label>
             </div>
         </div>
 
         <div class="form-outline mb-4 ag-field-content">
-            <input asp-for="Email" type="text" id="txtEmail" class="form-control ag-field-input ag-input-color-cinze-full" autocomplete="off" required />
+            <input asp-for="EmailSolicitacao" type="text" id="txtEmail" class="form-control ag-field-input ag-input-color-cinze-full" autocomplete="off" required />
             <label class="form-label text-semi-bold-light ag-field-label" for="form2Example2">E-mail</label>
         </div>
 
 
         <div class="form-outline mb-4 ag-field-content">
-            <input asp-for="Descricao_Solicitacao" type="text" id="txtEmail" class="form-control ag-field-input ag-input-color-cinze-full" autocomplete="off" required />
+            <input asp-for="DescricaoSolicitacao" type="text" id="txtEmail" class="form-control ag-field-input ag-input-color-cinze-full" autocomplete="off" required />
             <label class="form-label text-semi-bold-light ag-field-label" for="form2Example2">Descreva Seu Pedido</label>
         </div>
 
@@ -44,7 +44,7 @@
 
         <div class="col-lg-12 d-inline-flex">
             <div class="form-outline mb-4 ag-field-content col-lg-10 col-sm-10">
-                <input asp-for="Endereco_solicitacao" type="text" id="txtEmail" class="form-control ag-field-input ag-input-color-cinze-full" autocomplete="off" required />
+                <input asp-for="EnderecoSolicitacao" type="text" id="txtEmail" class="form-control ag-field-input ag-input-color-cinze-full" autocomplete="off" required />
                 <label class="form-label text-semi-bold-light ag-field-label" for="form2Example2">Endereço</label>
             </div>
 

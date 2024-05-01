@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Vitrine.Online.Core.Models.ServicosSolicitacao
+namespace Vitrine.Online.Core.Models.SolicitacaoOrcamento
 {
     public class AnexoSolicitacaoOrcamento
     {

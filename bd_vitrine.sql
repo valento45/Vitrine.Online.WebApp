@@ -40,6 +40,15 @@ create table produto_tb(
 
 );
 
-
+CREATE  table solicitaco_orcamento_tb(
+	
+	IdSolicitacao serial not null primary key,
+    NomeSolicitacao varchar (100),
+	CelularSolicitacao varchar (20),
+	EmailSolicitacao varchar (100) not null,
+	EnderecoSolicitacao varchar (100),
+	DescricaoSolicitacao varchar (100),
+	DataSolicitacao TIMESTAMP
+);
 
 

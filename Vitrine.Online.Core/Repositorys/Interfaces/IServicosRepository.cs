@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Vitrine.Online.Core.Repositorys.Interfaces
 {
-    public interface ITrabalhoRepository
+    public interface IServicosRepository
     {
     }
 }
