@@ -43,6 +43,24 @@ create table produto_tb(
 
 );
 
+CREATE  table solicitaco_orcamento_tb(
+	
+	IdSolicitacao serial not null primary key,
+    NomeSolicitacao varchar (100),
+	CelularSolicitacao varchar (20),
+	EmailSolicitacao varchar (100) not null,
+	EnderecoSolicitacao varchar (100),
+	DescricaoSolicitacao varchar (100),
+	DataSolicitacao TIMESTAMP
+);
 
+create table anexo_solicitacao_tb(
+		id_anexo serial not null primary key,
+		IdSolicitacao integer not null,
+		anexo_base64 varchar not null,
+		extensao_arquivo varchar(10),
+		constraint IdSolicitacao foreign key(IdSolicitacao)
+		references solicitaco_orcamento_tb(IdSolicitacao)
+);
 
 
