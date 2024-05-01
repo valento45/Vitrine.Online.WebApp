@@ -12,6 +12,7 @@ namespace Vitrine.Online.WebApp.Models
         public string EmailSolicitacao { get; set; }
         public string EnderecoSolicitacao { get; set; }
         public string DescricaoSolicitacao { get; set; }
+        public DateTime DataSolicitacao { get; set; } = DateTime.Now;
 
         public List<IFormFile> Anexos { get; set; }
 

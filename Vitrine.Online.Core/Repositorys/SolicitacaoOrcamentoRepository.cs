@@ -1,4 +1,5 @@
 ﻿using Expert.Gov.Core.Repositorys;
+using Npgsql;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -18,48 +19,111 @@ namespace Vitrine.Online.Core.Repositorys
         {
 
         }
-        public Task<bool> InserirSolicitacao(SolicitacaoOrcamento solicitacaoOrcamento)
+        public async Task<bool> InserirSolicitacao(SolicitacaoOrcamento solicitacaoOrcamento)
         {
-           //string query = " insert into SolicitacaoOrcamento_tb " +
-               
-                     throw new NotImplementedException();
+            string query = " insert into solicitaco_orcamento_tb " +
+            "(nomeSolicitacao, celularSolicitacao, emailSolicitacao, enderecoSolicitacao, descricaoSolicitacao," +
+            " dataSolicitacao)" +
+            "values (@nomeSolicitacao, @celularSolicitacao, @emailSolicitacao, @enderecoSolicitacao," +
+            " @descricaoSolicitacao, @dataSolicitacao) returning IdSolicitacao;";
+
+            NpgsqlCommand cmd = new NpgsqlCommand(query);
+            cmd.Parameters.AddWithValue(@"nomeSolicitacao", solicitacaoOrcamento.NomeSolicitacao);
+            cmd.Parameters.AddWithValue(@"celularSolicitacao", solicitacaoOrcamento.CelularSolicitacao);
+            cmd.Parameters.AddWithValue(@"emailSolicitacao", solicitacaoOrcamento.EmailSolicitacao);
+            cmd.Parameters.AddWithValue(@"enderecoSolicitacao", solicitacaoOrcamento.EnderecoSolicitacao);
+            cmd.Parameters.AddWithValue(@"descricaoSolicitacao", solicitacaoOrcamento.DescricaoSolicitacao);
+            cmd.Parameters.AddWithValue(@"dataSolicitacao", solicitacaoOrcamento.DataSolicitacao);
+
+            var result = await base.ExecuteScalarAsync(cmd);
+
+            if (result != null)
+            {
+                solicitacaoOrcamento.IdSolicitacao = long.Parse(result.ToString());
+            }
+
+            return solicitacaoOrcamento.IdSolicitacao > 0;
         }
 
-        public Task<bool> AtualizarSolicitacao(SolicitacaoOrcamento solicitacaoOrcamento)
+        public async Task<bool> AtualizarSolicitacao(SolicitacaoOrcamento solicitacaoOrcamento)
         {
-            throw new NotImplementedException();
+            string query = "update solicitaco_orcamento_tb set nomeSolicitacao = @nomeSolicitacao, " +
+                 "celularSolicitacao = @celularSolicitacao, emailSolicitacao = @emailSolicitacao," +
+                 "enderecoSolicitacao = @enderecoSolicitacao, descricaoSolicitacao = @descricaoSolicitacao," +
+                 "descricaoSolicitacao = @dataSolicitacao where IdSolicitacao = @IdSolicitacao ";
+
+            NpgsqlCommand cmd = new NpgsqlCommand(query);
+            cmd.Parameters.AddWithValue(@"IdSolicitacao", solicitacaoOrcamento.IdSolicitacao);
+            cmd.Parameters.AddWithValue(@"nomeSolicitacao", solicitacaoOrcamento.NomeSolicitacao);
+            cmd.Parameters.AddWithValue(@"celularSolicitacao", solicitacaoOrcamento.CelularSolicitacao);
+            cmd.Parameters.AddWithValue(@"emailSolicitacao", solicitacaoOrcamento.EmailSolicitacao);
+            cmd.Parameters.AddWithValue(@"enderecoSolicitacao", solicitacaoOrcamento.EnderecoSolicitacao);
+            cmd.Parameters.AddWithValue(@"descricaoSolicitacao", solicitacaoOrcamento.DescricaoSolicitacao);
+            cmd.Parameters.AddWithValue(@"descricaoSolicitacao", solicitacaoOrcamento.DataSolicitacao);
+
+            return await base.ExecuteCommand(cmd);
+
         }
 
-        public Task<bool> IncluirAnexoSolicitacao(SolicitacaoOrcamento solicitacaoOrcamento)
+        public async Task<bool> IncluirAnexoSolicitacao(AnexoSolicitacaoOrcamento anexo )
         {
-            throw new NotImplementedException();
+            string query = "insert into anexo_solicitacao_tb (IdSolicitacao, anexo_base64, extensao_arquivo)" +
+        " values (@IdSolicitacao, @anexo_base64, @extensao_arquivo)";
+
+            NpgsqlCommand cmd = new NpgsqlCommand(query);
+            cmd.Parameters.AddWithValue(@"IdSolicitacao", anexo.IdSolicitacao);
+            cmd.Parameters.AddWithValue(@"anexo_base64", anexo.Anexo_Base64);
+            cmd.Parameters.AddWithValue(@"extensao_arquivo", anexo.Extensao_Arquivo);
+
+
+            var result = await base.ExecuteCommand(cmd);
+            return result;
         }
 
-        public Task<IEnumerable<SolicitacaoOrcamento>> ObterTodosAnexos(long IdSolicitacao)
+        public async Task<bool> ExcluirAnexo(long IdSolicitacao)
         {
-            throw new NotImplementedException();
+            string query = " delete from anexo_solicitacao_tb where idSolicitacao = " + IdSolicitacao;
+            var result = await this.ExecuteAsync(query);
+            return result; ;
         }
 
-        public Task<IEnumerable<SolicitacaoOrcamento>> ObterTodosOrcamento(SolicitacaoOrcamento solicitacaoOrcamento)
+        public async Task<bool> ExcluirSolicitacao(long IdSolicitacao)
         {
-            throw new NotImplementedException();
+            string query = " delete from solicitaco_orcamento_tb where IdSolicitacao = " + IdSolicitacao;
+
+            var result = await this.ExecuteAsync(query);
+
+            return result;
         }
 
-        public Task<bool> ExcluirAnexo(SolicitacaoOrcamento solicitacaoOrcamento)
+        public async Task<IEnumerable<SolicitacaoOrcamento>> ObterTodosOrcamento(SolicitacaoOrcamento solicitacaoOrcamento)
         {
-            throw new NotImplementedException();
+
+            string query = "select * from  solicitaco_orcamento_tb ";
+
+            var result = await QueryAsync<SolicitacaoOrcamento>(query);
+
+            return result;
         }
 
-        public Task<bool> ExcluirSolicitacao(SolicitacaoOrcamento solicitacaoOrcamento)
+        public async Task<SolicitacaoOrcamento> GetById(long id)
         {
-            throw new NotImplementedException();
+            string query = "select * from  solicitaco_orcamento_tb where IdSolicitacao = " + id;
+
+            var result = await QueryAsync<SolicitacaoOrcamento>(query);
+
+            return result.FirstOrDefault();
         }
 
-        public Task<SolicitacaoOrcamento> GetById(long id)
+        public async Task<IEnumerable<AnexoSolicitacaoOrcamento>> ObterAnexos(long IdSolicitacao)
         {
-            throw new NotImplementedException();
-        }
+            string query = "select * from  anexo_solicitacao_tb where idSolicitacao = " + IdSolicitacao;
 
-  
+            var result = await QueryAsync<AnexoSolicitacaoOrcamento>(query);
+
+            return result;
+        }
     }
+
+    
 }

@@ -5,9 +5,9 @@ using System.Text;
 using System.Threading.Tasks;
 using Vitrine.Online.Core.Models.SolicitacaoOrcamento;
 
-namespace Vitrine.Online.Core.Repositorys.Interfaces
+namespace Vitrine.Online.Core.Services.Intefaces
 {
-    public interface ISolicitacaoOrcamentoRepository
+    public interface ISolicitacaoOrcamentoServices
     {
         Task<bool> InserirSolicitacao(SolicitacaoOrcamento solicitacaoOrcamento);
         Task<bool> AtualizarSolicitacao(SolicitacaoOrcamento solicitacaoOrcamento);
@@ -18,6 +18,5 @@ namespace Vitrine.Online.Core.Repositorys.Interfaces
         Task<IEnumerable<SolicitacaoOrcamento>> ObterTodosOrcamento(SolicitacaoOrcamento solicitacaoOrcamento);
         Task<SolicitacaoOrcamento> GetById(long id);
         Task<IEnumerable<AnexoSolicitacaoOrcamento>> ObterAnexos(long IdSolicitacao);
-
     }
 }
