@@ -10,7 +10,7 @@ namespace Vitrine.Online.Core.Models.SolicitacaoOrcamento
     public class AnexoSolicitacaoOrcamento
     {
         public int Id_Anexo { get; set; }
-        public long Id_Solicitacao { get; set; }
+        public long IdSolicitacao { get; set; }
         public string Anexo_Base64 { get; private set; }
         public string Extensao_Arquivo { get; private set; }
 
@@ -28,7 +28,7 @@ namespace Vitrine.Online.Core.Models.SolicitacaoOrcamento
 
         public AnexoSolicitacaoOrcamento(long idSolicitacao)
         {
-            Id_Solicitacao = idSolicitacao;
+            IdSolicitacao = idSolicitacao;
         }
 
 
