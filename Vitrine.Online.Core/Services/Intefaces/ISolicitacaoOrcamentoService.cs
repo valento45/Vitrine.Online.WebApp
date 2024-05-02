@@ -7,7 +7,7 @@ using Vitrine.Online.Core.Models.SolicitacaoOrcamento;
 
 namespace Vitrine.Online.Core.Services.Intefaces
 {
-    public interface ISolicitacaoOrcamentoServices
+    public interface ISolicitacaoOrcamentoService
     {
         Task<bool> InserirSolicitacao(SolicitacaoOrcamento solicitacaoOrcamento);
         Task<bool> AtualizarSolicitacao(SolicitacaoOrcamento solicitacaoOrcamento);

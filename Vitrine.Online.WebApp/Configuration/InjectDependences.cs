@@ -33,17 +33,20 @@ namespace Vitrine.Online.WebApp.Configuration
         public static void AddRepositorys(this IServiceCollection services)
         {
             services.AddTransient<ICategoriaRepository, CategoriaRepository>();
+            services.AddTransient<ISolicitacaoOrcamentoRepository, SolicitacaoOrcamentoRepository>();
 
         }
 
         public static void AddServices (this IServiceCollection services)
         {
             services.AddTransient<ICategoriaService, CategoriaService>();
+            services.AddTransient<ISolicitacaoOrcamentoService, SolicitacaoOrcamentoService>();
         }
 
         public static void AddApplications(this IServiceCollection services)
         {
             services.AddTransient<ICategoriaApplication, CategoriaApplication>();
+            services.AddTransient<ISolicitacaoOrcamentoApplication, SolicitacaoOrcamentoApplication>();
         }
     }
 }

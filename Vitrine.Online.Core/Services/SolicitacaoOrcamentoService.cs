@@ -9,11 +9,11 @@ using Vitrine.Online.Core.Services.Intefaces;
 
 namespace Vitrine.Online.Core.Services
 {
-    public class SolicitacaoOrcamentoServices : ISolicitacaoOrcamentoServices
+    public class SolicitacaoOrcamentoService : ISolicitacaoOrcamentoService
     {
         private readonly ISolicitacaoOrcamentoRepository _solicitacaoOrcamentoRepository;
 
-        public SolicitacaoOrcamentoServices(ISolicitacaoOrcamentoRepository solicitacaoOrcamentoRepository)
+        public SolicitacaoOrcamentoService(ISolicitacaoOrcamentoRepository solicitacaoOrcamentoRepository)
         {
             _solicitacaoOrcamentoRepository = solicitacaoOrcamentoRepository;
         }

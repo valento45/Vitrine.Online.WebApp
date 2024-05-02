@@ -21,11 +21,11 @@ namespace Vitrine.Online.Core.Repositorys
         }
         public async Task<bool> InserirSolicitacao(SolicitacaoOrcamento solicitacaoOrcamento)
         {
-            string query = " insert into solicitaco_orcamento_tb " +
+            string query = " insert into solicitacao_orcamento_tb " +
             "(nomeSolicitacao, celularSolicitacao, emailSolicitacao, enderecoSolicitacao, descricaoSolicitacao," +
             " dataSolicitacao)" +
             "values (@nomeSolicitacao, @celularSolicitacao, @emailSolicitacao, @enderecoSolicitacao," +
-            " @descricaoSolicitacao, @dataSolicitacao) returning IdSolicitacao;";
+            " @descricaoSolicitacao, @dataSolicitacao) returning idSolicitacao;";
 
             NpgsqlCommand cmd = new NpgsqlCommand(query);
             cmd.Parameters.AddWithValue(@"nomeSolicitacao", solicitacaoOrcamento.NomeSolicitacao);
@@ -50,7 +50,7 @@ namespace Vitrine.Online.Core.Repositorys
             string query = "update solicitaco_orcamento_tb set nomeSolicitacao = @nomeSolicitacao, " +
                  "celularSolicitacao = @celularSolicitacao, emailSolicitacao = @emailSolicitacao," +
                  "enderecoSolicitacao = @enderecoSolicitacao, descricaoSolicitacao = @descricaoSolicitacao," +
-                 "descricaoSolicitacao = @dataSolicitacao where IdSolicitacao = @IdSolicitacao ";
+                 "descricaoSolicitacao = @dataSolicitacao where idSolicitacao = @idSolicitacao ";
 
             NpgsqlCommand cmd = new NpgsqlCommand(query);
             cmd.Parameters.AddWithValue(@"IdSolicitacao", solicitacaoOrcamento.IdSolicitacao);
@@ -67,11 +67,11 @@ namespace Vitrine.Online.Core.Repositorys
 
         public async Task<bool> IncluirAnexoSolicitacao(AnexoSolicitacaoOrcamento anexo )
         {
-            string query = "insert into anexo_solicitacao_tb (IdSolicitacao, anexo_base64, extensao_arquivo)" +
-        " values (@IdSolicitacao, @anexo_base64, @extensao_arquivo)";
+            string query = "insert into anexo_solicitacao_tb (idSolicitacao, anexo_base64, extensao_arquivo)" +
+        " values (@idSolicitacao, @anexo_base64, @extensao_arquivo)";
 
             NpgsqlCommand cmd = new NpgsqlCommand(query);
-            cmd.Parameters.AddWithValue(@"IdSolicitacao", anexo.IdSolicitacao);
+            cmd.Parameters.AddWithValue(@"idSolicitacao", anexo.IdSolicitacao);
             cmd.Parameters.AddWithValue(@"anexo_base64", anexo.Anexo_Base64);
             cmd.Parameters.AddWithValue(@"extensao_arquivo", anexo.Extensao_Arquivo);
 
