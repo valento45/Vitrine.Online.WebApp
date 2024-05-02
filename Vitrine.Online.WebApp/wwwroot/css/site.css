@@ -299,3 +299,24 @@ hr {
         font-family: Poppins-SemiBold;
         color: #800000;
     }
+
+
+
+
+    .form-m-ghost{
+
+    }
+
+        .form-m-ghost input {
+            color: ghostwhite;
+            font-family: Poppins-Light;
+            font-size: 0.75rem;
+            letter-spacing: .5px;
+            line-height: 1.5rem;
+            border: 0;
+            outline: 0;
+            border-bottom: 1px solid;
+            padding-bottom: .5rem;
+            width: 100%;
+            border-radius: 50px;
+        }
