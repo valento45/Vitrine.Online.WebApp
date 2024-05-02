@@ -44,6 +44,7 @@ namespace Vitrine.Online.WebApp.Application
 
         public async Task<bool> ExcluirSolicitacao(long IdSolicitacao)
         {
+            await ExcluirAnexo(IdSolicitacao);
             return await _solicitacaoOrcamentoService.ExcluirSolicitacao(IdSolicitacao);
         }
 

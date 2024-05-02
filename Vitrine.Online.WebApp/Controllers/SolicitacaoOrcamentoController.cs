@@ -41,8 +41,8 @@ namespace Vitrine.Online.WebApp.Controllers
                 await _solicitacaoOrcamentoApplication.InserirSolicitacao(solicitacaoOrcamentoViewModel);
             }
 
-            MessageViewModel message = new MessageViewModel("Solicitação incluída com sucesso!",
-           "Em breve entraremos em contato, obrigado.");
+            MessageViewModel message = new MessageViewModel("Request Added Successfully!",
+           "We'll be in touch soon, thank you.");
             return View("SucessoMessage", message);
 
 

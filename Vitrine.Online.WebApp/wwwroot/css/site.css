@@ -123,6 +123,39 @@ hr {
     color: ghostwhite;
 }
 
+.container-ghost {
+    background-color: #302F32;
+    color: whitesmoke;
+}
+
+    .container-ghost a, .container-ghost p, .container-ghost span, .container-ghost label {
+        color: white;
+    }
+
+    .container-ghost h1, .container-ghost h2, .container-ghost h3, .container-ghost h4 {
+        color: whitesmoke;
+    }
+
+    .container-ghost small {
+        color: gray;
+    }
+
+    .container-ghost p b {
+        color: whitesmoke !important;
+    }
+
+.topo-home {
+    width: 100%;
+    height: 100vh;
+}
+
+    .topo-home img {
+        width: 100%;
+        height: 100%;
+    }
+
+
+
 .ag-field-label {
     font-family: Poppins-Light !important;
     font-size: 1.0rem;

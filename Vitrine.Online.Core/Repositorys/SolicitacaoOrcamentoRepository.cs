@@ -47,13 +47,13 @@ namespace Vitrine.Online.Core.Repositorys
 
         public async Task<bool> AtualizarSolicitacao(SolicitacaoOrcamento solicitacaoOrcamento)
         {
-            string query = "update solicitaco_orcamento_tb set nomeSolicitacao = @nomeSolicitacao, " +
+            string query = "update solicitacao_orcamento_tb set nomeSolicitacao = @nomeSolicitacao, " +
                  "celularSolicitacao = @celularSolicitacao, emailSolicitacao = @emailSolicitacao," +
                  "enderecoSolicitacao = @enderecoSolicitacao, descricaoSolicitacao = @descricaoSolicitacao," +
                  "descricaoSolicitacao = @dataSolicitacao where idSolicitacao = @idSolicitacao ";
 
             NpgsqlCommand cmd = new NpgsqlCommand(query);
-            cmd.Parameters.AddWithValue(@"IdSolicitacao", solicitacaoOrcamento.IdSolicitacao);
+            cmd.Parameters.AddWithValue(@"idSolicitacao", solicitacaoOrcamento.IdSolicitacao);
             cmd.Parameters.AddWithValue(@"nomeSolicitacao", solicitacaoOrcamento.NomeSolicitacao);
             cmd.Parameters.AddWithValue(@"celularSolicitacao", solicitacaoOrcamento.CelularSolicitacao);
             cmd.Parameters.AddWithValue(@"emailSolicitacao", solicitacaoOrcamento.EmailSolicitacao);
@@ -89,7 +89,7 @@ namespace Vitrine.Online.Core.Repositorys
 
         public async Task<bool> ExcluirSolicitacao(long IdSolicitacao)
         {
-            string query = " delete from solicitaco_orcamento_tb where IdSolicitacao = " + IdSolicitacao;
+            string query = " delete from solicitacao_orcamento_tb where idSolicitacao = " + IdSolicitacao;
 
             var result = await this.ExecuteAsync(query);
 
@@ -99,16 +99,16 @@ namespace Vitrine.Online.Core.Repositorys
         public async Task<IEnumerable<SolicitacaoOrcamento>> ObterTodosOrcamento(SolicitacaoOrcamento solicitacaoOrcamento)
         {
 
-            string query = "select * from  solicitaco_orcamento_tb ";
+            string query = "select * from  solicitacao_orcamento_tb ";
 
             var result = await QueryAsync<SolicitacaoOrcamento>(query);
 
             return result;
         }
 
-        public async Task<SolicitacaoOrcamento> GetById(long id)
+        public async Task<SolicitacaoOrcamento> GetById(long IdSolicitacao)
         {
-            string query = "select * from  solicitaco_orcamento_tb where IdSolicitacao = " + id;
+            string query = "select * from  solicitacao_orcamento_tb where idSolicitacao = " + IdSolicitacao;
 
             var result = await QueryAsync<SolicitacaoOrcamento>(query);
 

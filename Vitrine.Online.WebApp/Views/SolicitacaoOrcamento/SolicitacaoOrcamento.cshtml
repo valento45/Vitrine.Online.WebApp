@@ -11,13 +11,13 @@
 
         <div class="form-outline mb-4 ag-field-content">
             <input asp-for="NomeSolicitacao" type="text" id="txtEmail" class="form-control ag-field-input ag-input-color-cinze-full" autocomplete="off" required />
-            <label class="form-label text-semi-bold-light ag-field-label" for="form2Example2">Nome</label>
+            <label class="form-label text-semi-bold-light ag-field-label" for="form2Example2">Name</label>
         </div>
 
         <div class="col-lg-12">
             <div class="form-outline mb-4 ag-field-content col-lg-6">
                 <input asp-for="CelularSolicitacao" type="text" id="txtEmail" class="form-control ag-field-input ag-input-color-cinze-full" autocomplete="off" required />
-                <label class="form-label text-semi-bold-light ag-field-label" for="form2Example2">Celular</label>
+                <label class="form-label text-semi-bold-light ag-field-label" for="form2Example2">Cell phone</label>
             </div>
         </div>
 
@@ -29,14 +29,14 @@
 
         <div class="form-outline mb-4 ag-field-content">
             <input asp-for="DescricaoSolicitacao" type="text" id="txtEmail" class="form-control ag-field-input ag-input-color-cinze-full" autocomplete="off" required />
-            <label class="form-label text-semi-bold-light ag-field-label" for="form2Example2">Descreva Seu Pedido</label>
+            <label class="form-label text-semi-bold-light ag-field-label" for="form2Example2">Describe your request</label>
         </div>
 
 
 
         <div class="mb-5">
-            <a><span id="lblQtdAnexos">( 0 )</span>&nbsp; Anexos adicionados</a>
-            <button type="button" class="btn btn-teal ms-3" onclick="onClickCarregarImagens(this)">Carregar anexos</button>
+            <a><span id="lblQtdAnexos">( 0 )</span>&nbsp; Attachments added</a>
+            <button type="button" class="btn btn-teal ms-3" onclick="onClickCarregarImagens(this)">Upload attachments</button>
             <input id="btnCarregarImagens" onchange="onChangeImagens(this)" class="d-none" asp-for="Anexos" type="file" multiple>
         </div>
 
@@ -45,7 +45,7 @@
         <div class="col-lg-12 d-inline-flex">
             <div class="form-outline mb-4 ag-field-content col-lg-10 col-sm-10">
                 <input asp-for="EnderecoSolicitacao" type="text" id="txtEmail" class="form-control ag-field-input ag-input-color-cinze-full" autocomplete="off" required />
-                <label class="form-label text-semi-bold-light ag-field-label" for="form2Example2">Endereço</label>
+                <label class="form-label text-semi-bold-light ag-field-label" for="form2Example2">Address</label>
             </div>
 
 
@@ -54,8 +54,8 @@
 
 
         <div class="mt-5">
-            <button type="submit" class="btn btn-teal ms-5">Enviar</button>
-            <button type="button" class="btn btn-voltar ms-5">Voltar</button>
+            <button type="submit" class="btn btn-teal ms-5">Send</button>
+            <button type="button" class="btn btn-voltar ms-5">Come back</button>
 
         </div>
 
