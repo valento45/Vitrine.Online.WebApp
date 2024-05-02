@@ -7,10 +7,10 @@ namespace Vitrine.Online.WebApp.Application
 {
     public class SolicitacaoOrcamentoApplication : ISolicitacaoOrcamentoApplication
     {
-        private readonly ISolicitacaoOrcamentoServices _solicitacaoOrcamentoServices;
-        public SolicitacaoOrcamentoApplication(ISolicitacaoOrcamentoServices solicitacaoOrcamentoServices)
+        private readonly ISolicitacaoOrcamentoService _solicitacaoOrcamentoService;
+        public SolicitacaoOrcamentoApplication(ISolicitacaoOrcamentoService solicitacaoOrcamentoServices)
         {
-            _solicitacaoOrcamentoServices = solicitacaoOrcamentoServices;
+            _solicitacaoOrcamentoService = solicitacaoOrcamentoServices;
         }
         public async Task<bool> InserirSolicitacao(SolicitacaoOrcamentoViewModel solicitacaoOrcamentoViewModel)
         {
@@ -25,31 +25,39 @@ namespace Vitrine.Online.WebApp.Application
                DataSolicitacao = solicitacaoOrcamentoViewModel.DataSolicitacao,
             };
 
-            if (await _solicitacaoOrcamentoServices.InserirSolicitacao(obj))
+            if (await _solicitacaoOrcamentoService.InserirSolicitacao(obj))
             {
                 await this.IncluirAnexoSolicitacao(solicitacaoOrcamentoViewModel.Anexos, obj.IdSolicitacao);
                 return true;
             }
             return false;
         }
-        public Task<bool> AtualizarSolicitacao(SolicitacaoOrcamento solicitacaoOrcamento)
+        public async Task<bool> AtualizarSolicitacao(SolicitacaoOrcamento solicitacaoOrcamento)
         {
-            throw new NotImplementedException();
+            return await _solicitacaoOrcamentoService.AtualizarSolicitacao(solicitacaoOrcamento);
         }
 
-        public Task<bool> ExcluirAnexo(long IdSolicitacao)
+        public async Task<bool> ExcluirAnexo(long IdSolicitacao)
         {
-            throw new NotImplementedException();
+            return await _solicitacaoOrcamentoService.ExcluirAnexo(IdSolicitacao);
         }
 
-        public Task<bool> ExcluirSolicitacao(long IdSolicitacao)
+        public async Task<bool> ExcluirSolicitacao(long IdSolicitacao)
         {
-            throw new NotImplementedException();
+            return await _solicitacaoOrcamentoService.ExcluirSolicitacao(IdSolicitacao);
         }
 
-        public Task<SolicitacaoOrcamento> GetById(long id)
+        public async Task<SolicitacaoOrcamento> GetById(long id)
         {
-            throw new NotImplementedException();
+            var solicitacao = await _solicitacaoOrcamentoService.GetById(id);
+
+            if (solicitacao != null)
+            {
+                var anexos = await _solicitacaoOrcamentoService.ObterAnexos(id);
+                solicitacao.Imagens = anexos.ToList();
+            }
+
+            return solicitacao;
         }
 
         public async Task IncluirAnexoSolicitacao(List<IFormFile> anexos, long idSolicitacao)
@@ -74,20 +82,20 @@ namespace Vitrine.Online.WebApp.Application
                 }
 
 
-                await _solicitacaoOrcamentoServices.IncluirAnexoSolicitacao(obj);
+                await _solicitacaoOrcamentoService.IncluirAnexoSolicitacao(obj);
             }
         }
 
 
 
-        public Task<IEnumerable<AnexoSolicitacaoOrcamento>> ObterAnexos(long IdSolicitacao)
+        public async Task<IEnumerable<AnexoSolicitacaoOrcamento>> ObterAnexos(long IdSolicitacao)
         {
-            throw new NotImplementedException();
+            return await _solicitacaoOrcamentoService.ObterAnexos(IdSolicitacao);
         }
 
-        public Task<IEnumerable<SolicitacaoOrcamento>> ObterTodosOrcamento(SolicitacaoOrcamento solicitacaoOrcamento)
+        public async Task<IEnumerable<SolicitacaoOrcamento>> ObterTodosOrcamento(SolicitacaoOrcamento solicitacaoOrcamento)
         {
-            throw new NotImplementedException();
+          return await _solicitacaoOrcamentoService.ObterTodosOrcamento(solicitacaoOrcamento);
         }
     }
 }
