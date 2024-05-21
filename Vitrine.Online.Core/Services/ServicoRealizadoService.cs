@@ -57,7 +57,16 @@ namespace Vitrine.Online.Core.Services
 
         public async Task<IEnumerable<ServicosRealizado>> ObterTodosServicosRealizado()
         {
-            return await _servicoRealizadoRepository.ObterTodosServicosRealizado();
+            var servicos = await _servicoRealizadoRepository.ObterTodosServicosRealizado();
+
+            foreach(var service in servicos)
+            {
+                var collection = await _servicoRealizadoRepository.ObterAnexos(service.IdServico);
+
+                service.Imagens = collection.ToList();
+            }
+
+            return servicos;    
         }
     }
 }
