@@ -4,7 +4,6 @@
 <div class="container mt-5 container-ghost">
 
 
-
     <form class="form-contato-sugestao mt-3 col-lg-6" asp-controller="SolicitacaoOrcamento" asp-action="SalvarSolicitacao" method="post" enctype="multipart/form-data">
 
         <input asp-for="IdSolicitacao" class="d-none" />
@@ -28,8 +27,9 @@
 
 
         <div class="form-outline mb-4 ag-field-content">
-            <input asp-for="DescricaoSolicitacao" type="text" id="txtEmail" class="form-control ag-field-input ag-input-color-cinze-full" autocomplete="off" required />
-            <label class="form-label text-semi-bold-light ag-field-label" for="form2Example2">Describe your request</label>
+            <textarea asp-for="DescricaoSolicitacao" type="text" id="txtDescOrcamento" class="form-control ag-field-input ag-input-color-cinze-full" autocomplete="off" required>
+                </textarea>
+            <label class="form-label text-semi-bold-light ag-field-label" for="txtDescOrcamento">Describe your request</label>
         </div>
 
 

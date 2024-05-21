@@ -15,7 +15,9 @@ create table categoria_tb(
 );
 
 
- 
+ delete from categoria_tb 
+ delete from servico_realizado_tb
+ delete from anexo_servico_realizado_tb
 
 
 --drop table catalogos_tb

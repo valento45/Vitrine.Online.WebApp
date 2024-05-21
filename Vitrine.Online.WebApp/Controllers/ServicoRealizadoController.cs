@@ -45,7 +45,7 @@ namespace Vitrine.Online.WebApp.Controllers
             servicoRealizadoViewModel.Categorias = await _categoriaApplication.GetAll();
 
 
-            return View(nameof(IncluirTrabalho), servicoRealizadoViewModel);
+            return View("IncluirTrabalho", servicoRealizadoViewModel);
 
         }
 
@@ -66,15 +66,7 @@ namespace Vitrine.Online.WebApp.Controllers
 
 
             return View("IncluirTrabalho", servicoRealizadoViewModel); 
-        }
-
-
-        [HttpGet]
-        public async Task<IActionResult> IncluirTrabalho()
-        {
-
-            return View();
-        }
+        }    
 
         [HttpPost]
         public async Task<IActionResult> SalvarServico(ServicoRealizadoViewModel servicoRealizadoViewModel)
@@ -103,18 +95,7 @@ namespace Vitrine.Online.WebApp.Controllers
 
         }
 
-        [HttpGet]
-        public async Task<IActionResult> ServicoRealizado()
-        {
-            var servicosRealizadoLista_ = new ServicosRealizadosLista();
-
-
-            servicosRealizadoLista_.ListaServico = await _servicoRealizadoApplication.ObterTodosServicosRealizado();
-
-
-
-            return View(servicosRealizadoLista_);
-        }
+       
         [HttpGet]
         public async Task<IActionResult> ServicoRealizadoAdm()
         {
