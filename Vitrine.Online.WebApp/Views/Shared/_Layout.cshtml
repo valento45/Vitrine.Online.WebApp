@@ -7,14 +7,20 @@
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/Vitrine.Online.WebApp.styles.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/portfolios.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/carouselPartial.css" asp-append-version="true" />
 
     @await RenderSectionAsync("Styles", required: false)
 </head>
 <body>
     <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm  box-shadow mb-3 nav-options">
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm  box-shadow nav-options">
             <div class="container-fluid ">
-                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">Constructions NL</a>
+                @*     <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index" style="color: #14FFEC !important;">NT Corp</a> *@
+
+                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index" style="color: #14FFEC !important;">
+                    <img style="width: 150px; height: 35px;" src="~/imgs/nelson-tile-corp-logo2.png" />
+                </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
                         aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -24,10 +30,22 @@
                 <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between ">
                     <ul class="navbar-nav flex-grow-1">
                         <li class="nav-item">
-                            <a class=" nav-link " asp-area="" asp-controller="Catalogs" asp-action="VerCatalogo">View catalogs</a>
+                            <a class=" nav-link " asp-area="" asp-controller="Categoria" asp-action="Index">Categories</a>
+                        </li>
+                        <li class="nav-item d-none">
+                            <a class=" nav-link " asp-area="" asp-controller="Catalogs" asp-action="Index">Catalogs</a>
+                        </li>                       
+                        <li class="nav-item">
+                            <a class="nav-link " asp-area="" asp-controller="SolicitacaoOrcamento" asp-action="SolicitarOrcamentoAdm">View budgets</a>
+                        </li>
+                        <li class="nav-item d-none">
+                            <a class="nav-link " asp-area="" asp-controller="ServicoRealizado" asp-action="ServicoRealizadoAdm">Servico RealizadoAdm</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link " asp-area="" asp-controller="Home" asp-action="Privacy">View services</a>
+                            <a class="nav-link " asp-area="" asp-controller="ServicoRealizado" asp-action="Index">Services</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link " asp-area="" asp-controller="SolicitacaoOrcamento" asp-action="SolicitacaoOrcamento">Request Quote</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link " asp-area="" asp-controller="Home" asp-action="Privacy">Contact</a>
@@ -55,6 +73,7 @@
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
+    <script src="~/js/UtilAjax.js" asp-append-version="true"></script>
     @await RenderSectionAsync("Scripts", required: false)
 </body>
 </html>

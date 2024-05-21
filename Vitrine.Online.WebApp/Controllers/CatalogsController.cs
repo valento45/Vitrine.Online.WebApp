@@ -11,9 +11,11 @@ namespace Vitrine.Online.WebApp.Controllers
         }
 
 
-        public async Task<IActionResult> VerCatalogo()
+        public async Task<IActionResult> Index()
         {
             return View();
         }
+
+       
     }
 }

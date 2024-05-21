@@ -1,6 +1,12 @@
 ﻿using Npgsql;
 using System.Data;
 using System.Diagnostics;
+using Vitrine.Online.Core.Repositorys;
+using Vitrine.Online.Core.Repositorys.Interfaces;
+using Vitrine.Online.Core.Services;
+using Vitrine.Online.Core.Services.Intefaces;
+using Vitrine.Online.WebApp.Application;
+using Vitrine.Online.WebApp.Application.Interfaces;
 
 namespace Vitrine.Online.WebApp.Configuration
 {
@@ -8,7 +14,7 @@ namespace Vitrine.Online.WebApp.Configuration
     {
 
 
-        public static void AddConnection(IServiceCollection services, ConfigurationManager configuration)
+        public static void AddConnection(this IServiceCollection services, ConfigurationManager configuration)
         {
             NpgsqlConnection npgsqlConnection;
             var stringConnection = string.Empty;
@@ -24,14 +30,26 @@ namespace Vitrine.Online.WebApp.Configuration
             services.AddSingleton<IDbConnection>(npgsqlConnection);
         }
 
-        public static void AddRepositorys(IServiceCollection services)
+        public static void AddRepositorys(this IServiceCollection services)
         {
+            services.AddTransient<ICategoriaRepository, CategoriaRepository>();
+            services.AddTransient<ISolicitacaoOrcamentoRepository, SolicitacaoOrcamentoRepository>();
+            services.AddTransient<IServicoRealizadoRepository, ServicoRealizadoRepository>();
 
         }
 
-        public static void AddServices (IServiceCollection services)
+        public static void AddServices (this IServiceCollection services)
         {
+            services.AddTransient<ICategoriaService, CategoriaService>();
+            services.AddTransient<ISolicitacaoOrcamentoService, SolicitacaoOrcamentoService>();
+            services.AddTransient<IServicoRealizadoService, ServicoRealizadoService>();
+        }
 
+        public static void AddApplications(this IServiceCollection services)
+        {
+            services.AddTransient<ICategoriaApplication, CategoriaApplication>();
+            services.AddTransient<ISolicitacaoOrcamentoApplication, SolicitacaoOrcamentoApplication>();
+            services.AddTransient<IServicoRealizadoApplication, ServicoRealizadoApplication>();
         }
     }
 }

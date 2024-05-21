@@ -1,0 +1,79 @@
+﻿@model ServicoRealizadoViewModel
+@{
+    Layout = "_Layout";
+}
+
+<div class=" container container-ghost mt-5">
+
+    <h4>New service</h4>
+    <hr />
+
+    <form class="form-contato-sugestao mt-3 col-lg-6 catalog-inclui" asp-action="SalvarServico" asp-controller="ServicoRealizado" method="post" enctype="multipart/form-data">
+
+      
+        <input id="txtCodigo" type="hidden" asp-for="IdServico" />
+
+
+
+        <div class="form-outline mb-4 ag-field-content catalog-inclui">
+            <input asp-for="DescricaoServico" type="text" id="txtDescricao" class="form-control ag-field-input ag-input-color-cinze-full " autocomplete="off" required />
+            <label class="form-label text-semi-bold-light ag-field-label" for="form2Example2" >Description</label>
+        </div>
+
+        <div class="form-outline mb-4 ag-field-content col-lg-6">
+            <input asp-for="DataServico" type="date" id="txtData" class="form-control ag-field-input ag-input-color-cinze-full " autocomplete="off" />
+            <label class="form-label text-semi-bold-light ag-field-label" for="form2Example2">Date</label>
+        </div>
+@* 
+        <div class="form-outline mb-4 ag-field-content d-none">
+            <input asp-for="IdCategoria" type="text" id="txtLocal" class="form-control ag-field-input ag-input-color-cinze-full catalog-inclui" autocomplete="off" required />
+            <label class="form-label text-semi-bold-light ag-field-label" for="form2Example2">Categoria do Servico</label>
+        </div> *@
+
+        <div class="form-outline mb-4 ag-field-content">
+            <select asp-for="IdCategoria" id="textCategoria" class="form-control ag-field-input ag-input-color-cinze-full catalog-inclui" value="0">
+                <option value="0" selected>Selecionar</option>
+                
+                @foreach(var categoria in Model.Categorias)
+                {
+                    <option value="@((int)categoria.IdCategoria)">@categoria.NomeCategoria</option>
+                }
+
+            </select>
+            <label class="form-label text-semi-bold-light ag-field-label" style="color: #14FFEC" for="form2Example2">Service Category</label>
+        </div>
+
+        <div class="form-outline mb-4 ag-field-content">
+            <input asp-for="EnderecoServico" type="text" id="txtLocal" class="form-control ag-field-input ag-input-color-cinze-full catalog-inclui" autocomplete="off" required />
+            <label class="form-label text-semi-bold-light ag-field-label" for="form2Example2">Address</label>
+        </div>
+
+
+
+        <div class="mb-5">
+            <a style="color: #14FFEC"><span id="lblQtdAnexos">( 0 )</span>&nbsp; Attachments added</a>
+            <button type="button" class="btn btn-teal ms-3" onclick="onClickCarregarImagens(this)">Upload Attachment's</button>
+            <input id="btnCarregarImagens" onchange="onChangeImagens(this)" class="d-none" asp-for="Anexos" type="file" multiple>
+
+        </div>
+
+        <div class="form-outline mb-4 ag-field-content">
+
+            <textarea id="txtResumo" asp-for="ResumoServico" class="form-control ag-field-input ag-input-color-cinze-full catalog-inclui" autocomplete="off" required style="height: 200px;">
+
+            </textarea>
+            <label class="form-label text-semi-bold-light ag-field-label" for="form2Example2">Summary</label>
+        </div>
+
+
+        <div class="mt-5"  >
+            <button type="submit" class="btn btn-teal ms-4">Publish</button>
+            <button type="button" class="btn btn-voltar ms-2">To go back</button>
+        </div>
+
+    </form>
+</div>
+
+@section Scripts{
+    <script src="~/js/Servicorealizado/ServicoRealizado.js"true"></script>
+}

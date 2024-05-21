@@ -1,0 +1,58 @@
+﻿@using Vitrine.Online.Core.Models.SolicitacaoOrcamento;
+@model SolicitacaoOrcamentoLista
+@{
+   
+    {
+        Layout = "_layout";
+        ViewData["Title"] = "Solicitacao Orcamento";
+    }
+}
+
+<div class="container container-ghost mt-5">
+
+    <div class="col-lg-12 d-inline-flex">
+        <h4 class="col-lg-10">Solicitações de Orçamentos</h4>
+    </div>
+    <hr class=" mb-5" />
+    <form>
+
+        <table class="table table-administrativo">
+            <thead class="table-dark">
+                <tr style="color: white">
+                    <td>Code</td>
+                    <td>Name</td>
+                    <td>Cell phone</td>
+                    <td >Email</td>
+                    <td>Description</td>
+                    <td>Address</td>
+                    <td>Request Date</td>
+                    <td>Actions</td>
+                </tr>
+            </thead>
+
+            <tbody>
+                @foreach (var solicitacaoOrcamento in Model.ListaSolicitacoes)
+                {
+                    <tr style="color: white">
+                        <td> @solicitacaoOrcamento.IdSolicitacao</td>
+                        <td> @solicitacaoOrcamento.NomeSolicitacao</td>
+                        <td> @solicitacaoOrcamento.CelularSolicitacao</td>
+                        <td> @solicitacaoOrcamento.EmailSolicitacao</td>
+                        <td> @solicitacaoOrcamento.EnderecoSolicitacao</td>
+                        <td> @solicitacaoOrcamento.DescricaoSolicitacao</td>
+                        <td> @solicitacaoOrcamento.DataSolicitacao</td>
+                     
+                        <td>
+                            <div class="d-flex flex-wrap">
+                                <button class="btn btn-dark ms-1 mb-1" asp-controller="SolicitacaoOrcamento" asp-action="VerSolicitacao" asp-route-id="@solicitacaoOrcamento.IdSolicitacao">View Request</button>
+                                <button class="btn btn-danger ms-1 mb-1" asp-controller="SolicitacaoOrcamento" asp-action="ExcluirSolicitacao" asp-route-id="@solicitacaoOrcamento.IdSolicitacao">Delete</button>
+                            </div>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+
+    </form>
+</div>
+

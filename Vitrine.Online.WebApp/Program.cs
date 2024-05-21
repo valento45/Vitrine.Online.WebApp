@@ -1,7 +1,16 @@
+
+
+using Vitrine.Online.WebApp.Configuration;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+
+builder.Services.AddConnection(builder.Configuration);
+builder.Services.AddRepositorys();
+builder.Services.AddServices();
+builder.Services.AddApplications();
 
 var app = builder.Build();
 
