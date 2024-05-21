@@ -48,6 +48,12 @@
             <p><b>Description:</b></p>
             <h4 class="mb-5 mt-2">@Model.DescricaoServico</h4>
 
+            <p><b>Categoria:</b></p>
+            <h4 class="mb-5 mt-2">@Model.IdCategoria
+            
+            </h4>
+           
+
             <p><b>Resumo:</b></p>
             <p style="word-wrap: break-word;">@Model.ResumoServico</p>
 
@@ -66,5 +72,5 @@
 </div>
 
 @section Scripts{
-    <script src="~/js/ServicoRealizado/ListaServicoRealizado.js asp-append-version="true"></script>
+    <script src="~/js/ServicoRealizado/ListaServicoRealizado.js" asp-append-version="true"></script>
 }

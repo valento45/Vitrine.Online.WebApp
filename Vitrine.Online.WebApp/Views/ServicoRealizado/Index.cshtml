@@ -29,7 +29,7 @@
 
                 @foreach (var servicosRealizado in Model.ListaServico)
                 {
-                    <div class="card-portfolio" onclick="onClickVerTrabalho(@JsonConvert.SerializeObject(servicosRealizado))">
+                    <div class="card-portfolio" onclick="onClickVerServicos(@JsonConvert.SerializeObject(servicosRealizado))">
                         @if (servicosRealizado.Imagens?.Any() ?? false)
                         {
                             var imagem = @servicosRealizado.Imagens?.FirstOrDefault();
@@ -65,5 +65,5 @@
 </div>
 
 @section Scripts{
-    <script src="~/js/ServicoRealizado/ListaServicoRealizado.js asp-append-version="true"></script>
+    <script src="~/js/ServicoRealizado/ListaServicoRealizado.js " asp-append-version="true"></script>
 }

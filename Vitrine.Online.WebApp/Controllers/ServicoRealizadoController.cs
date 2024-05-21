@@ -49,12 +49,11 @@ namespace Vitrine.Online.WebApp.Controllers
 
         }
 
-        [HttpGet]
-        public async Task<IActionResult> VerServicos(long idServico)
+        [HttpPost]
+        public async Task<IActionResult> VerServicos([FromBody] ServicosRealizado servico)
         {
 
-            var servicoRealizado = await _servicoRealizadoApplication.GetById(idServico);
-            return View(servicoRealizado);
+            return View(servico);
         }
 
         [HttpGet]

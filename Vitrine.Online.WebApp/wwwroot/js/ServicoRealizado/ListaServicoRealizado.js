@@ -6,9 +6,9 @@
 
 
 
-function onClickVerTrabalho(servico) {
+function onClickVerServicos(servico) {
 
-    var url = "../ServicoRealizado/VerServico";
+    var url = "../ServicoRealizado/VerServicos";
 
     util.ajax.post(url, servico, resultVerServicoSucess, resultVerServicoError);
 
