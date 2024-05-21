@@ -34,6 +34,7 @@ namespace Vitrine.Online.WebApp.Configuration
         {
             services.AddTransient<ICategoriaRepository, CategoriaRepository>();
             services.AddTransient<ISolicitacaoOrcamentoRepository, SolicitacaoOrcamentoRepository>();
+            services.AddTransient<IServicoRealizadoRepository, ServicoRealizadoRepository>();
 
         }
 
@@ -41,12 +42,14 @@ namespace Vitrine.Online.WebApp.Configuration
         {
             services.AddTransient<ICategoriaService, CategoriaService>();
             services.AddTransient<ISolicitacaoOrcamentoService, SolicitacaoOrcamentoService>();
+            services.AddTransient<IServicoRealizadoService, ServicoRealizadoService>();
         }
 
         public static void AddApplications(this IServiceCollection services)
         {
             services.AddTransient<ICategoriaApplication, CategoriaApplication>();
             services.AddTransient<ISolicitacaoOrcamentoApplication, SolicitacaoOrcamentoApplication>();
+            services.AddTransient<IServicoRealizadoApplication, ServicoRealizadoApplication>();
         }
     }
 }

@@ -9,10 +9,10 @@ namespace Vitrine.Online.Core.Models.services
 {
     public class AnexoServicosRealizado
     {
-        public int Id_Anexo { get; set; }
-        public long Id_Portfolio { get; set; }
-        public string Anexo_Base64 { get; set; }
-        public string Extensao_Arquivo { get; set; }
+        public int IdAnexo { get; set; }
+        public long IdServico { get; set; }
+        public string AnexoBase64 { get; set; }
+        public string ExtensaoArquivo { get; set; }
 
 
         public AnexoServicosRealizado()
@@ -25,20 +25,20 @@ namespace Vitrine.Online.Core.Models.services
 
         }
 
-        public AnexoServicosRealizado(long idPortfolio)
+        public AnexoServicosRealizado(long IdServico)
         {
-            Id_Portfolio = idPortfolio;
+            this.IdServico = IdServico;
         }
 
 
         public void InformarAnexoBase64(string anexo)
         {
-            Anexo_Base64 = anexo;
+            AnexoBase64 = anexo;
         }
 
         public void InformarExtensao(string extensao)
         {
-            Extensao_Arquivo = extensao;
+            ExtensaoArquivo = extensao;
         }
     }
 }

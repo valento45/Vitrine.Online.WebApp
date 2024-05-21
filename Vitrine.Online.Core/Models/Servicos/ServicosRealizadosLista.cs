@@ -9,7 +9,7 @@ namespace Vitrine.Online.Core.Models.services
     public class ServicosRealizadosLista 
     {
 
-        public IEnumerable<ServicosRealizado> ListaTrabalhosRealizados { get; set; }
+        public IEnumerable<ServicosRealizado> ListaServico { get; set; }
 
         
     }

@@ -65,3 +65,25 @@ create table anexo_solicitacao_tb(
 );
 
 
+create table servico_realizado_tb(
+      IdServico serial not null primary key,
+	  IdCategoria integer not null,
+	  DescricaoServico varchar (300),
+	  DataServico timestamp not null,
+	  ResumoServico varchar (300),
+	  EnderecoServico varchar (300),
+	  CONSTRAINT IdCategoria_fk FOREIGN key(IdCategoria)
+	  REFERENCES categoria_tb(IdCategoria)
+);
+
+
+create table anexo_servico_realizado_tb(
+		IdAnexo serial not null primary key,
+		IdServico integer not null,
+		AnexoBase64 varchar not null,
+		ExtensaoArquivo varchar(10),
+		constraint IdServico_FK foreign key(IdServico)
+		references servico_realizado_tb(IdServico)
+);
+
+

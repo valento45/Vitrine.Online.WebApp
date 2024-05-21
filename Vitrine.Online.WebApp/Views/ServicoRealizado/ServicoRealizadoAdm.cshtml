@@ -1,0 +1,60 @@
+﻿@using Vitrine.Online.Core.Models.services;
+@model ServicosRealizadosLista
+
+@{
+
+    {
+        Layout = "_layout";
+        ViewData["Title"] = "Servico Realizado";
+    }
+}
+
+<div class="container container-ghost mt-5">
+
+    <div class="col-lg-12 d-inline-flex">
+        <h4 class="col-lg-10">Servico Realizados</h4>
+    </div>
+    <hr class=" mb-5" />
+</div>
+
+<div class="container mt-5 mb-5">
+
+    <form>
+        <table class="table table-administrativo table-container">
+            <thead class="table-dark">
+                <tr style="color: white" >
+                    <td>Código</td>
+                    <td>IdCategoria</td>
+                    <td>DescricaoServico</td>
+                    <td>DataServico</td>
+                    <td>ResumoServico</td>
+                    <td>EnderecoServico</td>
+                    <td>Acoes </td>
+                </tr>
+            </thead>
+
+            <tbody>
+                @foreach (var servicosRealizado in Model.ListaServico)
+                {
+                    <tr style="color: white">
+                        <td> @servicosRealizado.IdServico</td>
+                        <td>  @servicosRealizado.IdCategoria</td>
+                        <td> @servicosRealizado.DescricaoServico</td>
+                        <td> @servicosRealizado.DataServico.ToString("dd/MM/yyyy")</td>
+                        <td> @servicosRealizado.ResumoServico</td>
+                        <td> @servicosRealizado.EnderecoServico</td>
+                        <td>
+                            <div class="d-flex flex-wrap">
+                                <button class="btn btn-secondary ms-1" asp-controller="ServicoRealizado" asp-action="EditarServico" asp-route-id="@servicosRealizado.IdServico">Editar</button>
+                                <button class="btn btn-danger ms-1" asp-controller="ServicoRealizado" asp-action="ExcluirServicoRealizado" asp-route-id="@servicosRealizado.IdServico">Excluir</button>
+                            </div>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+
+    </form>
+
+
+</div>

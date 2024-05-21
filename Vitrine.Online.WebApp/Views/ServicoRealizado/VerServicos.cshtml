@@ -1,16 +1,16 @@
-﻿@using Vitrine.Online.Core.Models.SolicitacaoOrcamento;
-@model SolicitacaoOrcamento
-
-
+﻿@using Vitrine.Online.Core.Models.services;
+@model ServicosRealizado
 @{
-
-    ViewData["Title"] = "Solicitacao Orcamento";
+    Layout = "_Layout";
+    ViewData["Title"] = "Servico Realizado";
 }
 
 <div class="mt-5 mb-5 container container-ghost">
 
+
     <div class="col-lg-12 d-inline-flex">
-        <h4 class="col-lg-10">Request Details</h4>
+        <h4 class="col-lg-10">@Model.DescricaoServico</h4>
+
     </div>
     <hr />
 
@@ -25,7 +25,7 @@
                 {
                     @foreach (var img in Model.Imagens)
                     {
-                        var imgBase64 = img.Anexo_Base64;
+                        var imgBase64 = img.AnexoBase64;
 
                         <div class="mySlides">
                             <img src="data:image/png;base64,@imgBase64" style="width:100%; border-radius: 50px; height: 500px !important;">
@@ -46,16 +46,16 @@
         <div class="col-lg-6 container-ghost pnl-descricao-trabalho">
 
             <p><b>Description:</b></p>
-            <h4 class="mb-5 mt-2">@Model.DescricaoSolicitacao</h4>
+            <h4 class="mb-5 mt-2">@Model.DescricaoServico</h4>
 
-            <p><b>Email:</b></p>
-            <p style="word-wrap: break-word;">@Model.EmailSolicitacao</p>
+            <p><b>Resumo:</b></p>
+            <p style="word-wrap: break-word;">@Model.ResumoServico</p>
 
             <p><b>Address:</b></p>
-            <p>@Model.EnderecoSolicitacao</p>
+            <p>@Model.EnderecoServico</p>
 
             <p><b>Request Date:</b></p>
-            <p>@Model.DataSolicitacao.ToString("dd/MM/yyyy")</p>
+            <p>@Model.DataServico.ToString("dd/MM/yyyy")</p>
         </div>
 
     </div>
@@ -64,3 +64,7 @@
 
 
 </div>
+
+@section Scripts{
+    <script src="~/js/ServicoRealizado/ListaServicoRealizado.js asp-append-version="true"></script>
+}

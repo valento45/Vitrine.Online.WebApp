@@ -10,15 +10,13 @@ namespace Vitrine.Online.Core.Models.services
     public class ServicosRealizado
     {
 
-        public long Id_Servico { get; set; }
-        public long Id_Catalogo { get; set; }
-        public string Descricao { get; set; }
-        public DateTime Data_Hora { get; set; }
-        public string Resumo { get; set; }
-        public string Endereco { get; set; }
+        public long   IdServico { get; set; }
+        public long IdCategoria { get; set; }
+        public string DescricaoServico { get; set; }
+        public DateTime DataServico { get; set; }
+        public string ResumoServico { get; set; }
+        public string EnderecoServico { get; set; }
      
-
-
         public ICollection<AnexoServicosRealizado> Imagens { get; set; }
 
 
@@ -34,15 +32,15 @@ namespace Vitrine.Online.Core.Models.services
         }
 
 
-        public void InformarAnexo(AnexoServicosRealizado anexoTrabalhoRealizado)
+        public void InformarAnexo(AnexoServicosRealizado anexoServicosRealizado)
         {
             if (Imagens == null)
                 Imagens = new List<AnexoServicosRealizado>();
 
-            Imagens.Add(anexoTrabalhoRealizado);
+            Imagens.Add(anexoServicosRealizado);
         }
 
 
-       
+
     }
 }

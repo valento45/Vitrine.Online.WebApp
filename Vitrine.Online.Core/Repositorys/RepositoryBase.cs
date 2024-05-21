@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 using Dapper;
 using Npgsql;
 
-namespace Expert.Gov.Core.Repositorys
+namespace Vitrine.Online.Core.Repositorys
 {
     public class RepositoryBase
     {
