@@ -8,12 +8,13 @@
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/Vitrine.Online.WebApp.styles.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/css/portfolios.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/carouselPartial.css" asp-append-version="true" />
 
     @await RenderSectionAsync("Styles", required: false)
 </head>
 <body>
     <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm  box-shadow mb-3 nav-options">
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm  box-shadow nav-options">
             <div class="container-fluid ">
                 @*     <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index" style="color: #14FFEC !important;">NT Corp</a> *@
 
@@ -33,10 +34,7 @@
                         </li>
                         <li class="nav-item d-none">
                             <a class=" nav-link " asp-area="" asp-controller="Catalogs" asp-action="Index">Catalogs</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link " asp-area="" asp-controller="SolicitacaoOrcamento" asp-action="SolicitacaoOrcamento">Request Quote</a>
-                        </li>
+                        </li>                       
                         <li class="nav-item">
                             <a class="nav-link " asp-area="" asp-controller="SolicitacaoOrcamento" asp-action="SolicitarOrcamentoAdm">View budgets</a>
                         </li>
@@ -45,6 +43,9 @@
                         </li>
                         <li class="nav-item">
                             <a class="nav-link " asp-area="" asp-controller="ServicoRealizado" asp-action="Index">Services</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link " asp-area="" asp-controller="SolicitacaoOrcamento" asp-action="SolicitacaoOrcamento">Request Quote</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link " asp-area="" asp-controller="Home" asp-action="Privacy">Contact</a>

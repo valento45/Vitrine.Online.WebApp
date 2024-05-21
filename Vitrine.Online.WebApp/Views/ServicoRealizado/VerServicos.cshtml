@@ -1,5 +1,5 @@
 ﻿@using Vitrine.Online.Core.Models.services;
-@model ServicosRealizado
+@model ServicoRealizadoViewModel
 @{
     Layout = "_Layout";
     ViewData["Title"] = "Servico Realizado";
@@ -46,22 +46,19 @@
         <div class="col-lg-6 container-ghost pnl-descricao-trabalho">
 
             <p><b>Description:</b></p>
-            <h4 class="mb-5 mt-2">@Model.DescricaoServico</h4>
+            <h4 class="mb-4">@Model.DescricaoServico</h4>
 
-            <p><b>Categoria:</b></p>
-            <h4 class="mb-5 mt-2">@Model.IdCategoria
-            
-            </h4>
-           
+            <p><b>Categorie:</b></p>
+            <h5 class="mb-4">@Model.ObterCategoria().NomeCategoria</h5>
 
-            <p><b>Resumo:</b></p>
-            <p style="word-wrap: break-word;">@Model.ResumoServico</p>
+            <p><b>Resume:</b></p>
+            <h5 class="mb-4" style="word-wrap: break-word;">@Model.ResumoServico</h5>
 
             <p><b>Address:</b></p>
-            <p>@Model.EnderecoServico</p>
+            <h5 class="mb-4">@Model.EnderecoServico</h5>
 
             <p><b>Request Date:</b></p>
-            <p>@Model.DataServico.ToString("dd/MM/yyyy")</p>
+            <h5 class="mb-4">@Model.DataServico.ToString("dd/MM/yyyy")</h5>
         </div>
 
     </div>
