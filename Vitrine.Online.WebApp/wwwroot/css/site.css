@@ -238,7 +238,7 @@ hr {
         line-height: 2rem
     }
     .quote-adjuste {
-        position: absolute;
+        position: relative;
         display: flex;
         flex-direction: column;
         margin-left: 10%;
@@ -428,4 +428,3 @@ hr {
             width: 100%;
             border-radius: 50px;
         }
-
