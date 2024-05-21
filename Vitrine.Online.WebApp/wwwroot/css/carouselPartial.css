@@ -3,18 +3,11 @@
     flex-direction: column;
     width: 60%;
     position: absolute;
-    margin-top: 3%;
+    margin-top: 6%;
     margin-left: 20%;
     text-align: center;
     z-index: 200;
 }
-    .my-carousel .captions h5 {
-        font-size: 10pt;
-        margin-bottom: 3%;
-        margin-left: 1%;
-        margin-right: 1%;
-    }
-
     .my-carousel .captions h3 {
         font-size: 30pt;
         animation: slideOut 1s;
@@ -39,20 +32,21 @@
             color: #14FFEC;
         }
 
-    .my-carousel .captions h5 b {
+.subtitle{
+    font-size: 10pt;
+    margin-bottom: 3%;
+}
+
+    .subtitle b {
         color: #14FFEC;
     }
 
-.welcome {
-    display: flex;
-    justify-content: center;
-    animation: slideIn 1s;
-}
-
-    .welcome div {
-        margin-top: 0.5%;
+    .lines {
+        margin-top: 0.6%;
         width: 10%;
-        border-top: 1px dashed white;
+        border-top: 1px dashed #ffffff66;
+        margin-left: 1%;
+        margin-right: 1%;
     }
 
 .my-carousel img {
@@ -80,21 +74,27 @@
 }
 
 /*-----------Animações----------*/
+
+:root{
+    --distance: 100px;
+    --distanceReverse: -100px;
+}
+
 [data-anime] {
     opacity: 0;
     transition: all 1s;
 }
 
 [data-anime="bottom"] {
-    transform: translate3d(0, 100px, 0);
+    transform: translate3d(0, var(--distance), 0);
 }
 
 [data-anime="right"] {
-    transform: translate3d(100px, 0, 0);
+    transform: translate3d(var(--distance), 0, 0);
 }
 
 [data-anime="left"] {
-    transform: translate3d(-100px, 0, 0);
+    transform: translate3d(var(--distanceReverse), 0, 0);
 }
 
 [data-anime].animate {
